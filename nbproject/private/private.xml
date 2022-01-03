@@ -5,6 +5,8 @@
         <group>
             <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/Login.java</file>
             <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/MainGui.java</file>
+            <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/TestGui.java</file>
+            <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/AddBnGui.java</file>
             <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/ConnectSQLSV.java</file>
             <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/Test.java</file>
         </group>
