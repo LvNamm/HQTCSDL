@@ -22,7 +22,7 @@ public class TestGui extends java.awt.Frame {
             int column = e.getColumn();
             TableModel model = (TableModel)e.getSource();
             for(int i=0;i<model.getColumnCount();i++){
-                System.out.println(model.getValueAt(row, i));
+                System.out.println(model.getColumnName(i));
             }
         });
     }
