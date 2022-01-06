@@ -723,7 +723,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Xu&#x1ea5;t h&#xf3;a &#x111;&#x1a1;n vi&#x1ec7;n ph&#xed;"/>
+                <Property name="text" type="java.lang.String" value="Xu&#x1ea5;t t&#x1ed5;ng vi&#x1ec7;n Ph&#xed;"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>

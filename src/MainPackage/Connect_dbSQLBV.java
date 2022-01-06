@@ -32,7 +32,7 @@ public class Connect_dbSQLBV {
 
     public static void insert(String TenBn, String NamSinh, String Gioitinh, String diachi, String sdt, String dt, String scmt) throws SQLException, ParseException {
         Connection cn = getConnect("sa", "1");
-        SimpleDateFormat sdf1 = new SimpleDateFormat("mm/dd/yyyy");
+        SimpleDateFormat sdf1 = new SimpleDateFormat("MM/dd/yyyy");
         java.util.Date udob = sdf1.parse(NamSinh);
         System.out.println(udob);
         java.sql.Date date = new java.sql.Date(udob.getTime());
@@ -102,7 +102,30 @@ public class Connect_dbSQLBV {
         }
         return a;
     }
-    
+    public static String getTenBnByMaBa(int MaBa) throws SQLException{
+        Connection cn = getConnect("sa", "1");
+        Statement statement = (Statement) cn.createStatement();
+        //statement.executeUpdate("INSERT INTO value ('009','phong','vn',10,11100)");
+        ResultSet resultSet = statement.executeQuery("select TenBn from BenhNhan,BenhAn where BenhNhan.MaBn = BenhAn.MaBn and BenhAn.MaBa = "+MaBa);
+        String a = null;
+        while (resultSet.next()) {
+            
+            a = resultSet.getString(1);
+        }
+        return a;
+    }
+    public static double getDonGia(int MaPhong) throws SQLException{
+        Connection cn = getConnect("sa", "1");
+        Statement statement = (Statement) cn.createStatement();
+        //statement.executeUpdate("INSERT INTO value ('009','phong','vn',10,11100)");
+        ResultSet resultSet = statement.executeQuery("select DonGia from Phong where MaPhong = "+MaPhong);
+        double a = 0;
+        while (resultSet.next()) {
+            
+            a = resultSet.getDouble(1);
+        }
+        return a;
+    }
     public static String GetTenNv(int MaNv) throws SQLException{
         Connection cn = getConnect("sa", "1");
         Statement statement = (Statement) cn.createStatement();
@@ -115,25 +138,47 @@ public class Connect_dbSQLBV {
         }
         return a;
     }
-    public static void insertBa(int Mabn, int Manv,String ngayvaovien,float Vienphidadong,String sothebhyt) throws SQLException, ParseException {
+    public static void insertBa(int Mabn, int Manv,String ngayvaovien,Double Vienphidadong,String sothebhyt) throws SQLException, ParseException {
         Connection cn = getConnect("sa", "1");
-        SimpleDateFormat sdf1 = new SimpleDateFormat("mm/dd/yyyy");
+        SimpleDateFormat sdf1 = new SimpleDateFormat("MM/dd/yyyy");
         java.util.Date udob = sdf1.parse(ngayvaovien);
         java.sql.Date date = new java.sql.Date(udob.getTime());
-        System.out.println(date);
         String query = "insert into BenhAn(MaBn, MaNv, NgayVaoVien,VienPhiDaDong, SoTheBHYT) values(?,?,?,?,?)";
         PreparedStatement preparedStmt = cn.prepareStatement(query);
         preparedStmt.setInt(1, Mabn);
         preparedStmt.setInt(2, Manv);
         preparedStmt.setDate(3, date);
-        preparedStmt.setFloat(4, Vienphidadong);
+        preparedStmt.setDouble(4, Vienphidadong);
         preparedStmt.setString(5, sothebhyt);
-
         // execute the preparedstatement
         preparedStmt.execute();
     }
+        public static void insertPhong(int Sogiuong,double Dongia) throws SQLException, ParseException {
+        Connection cn = getConnect("sa", "1");
+        String query = "insert into Phong values(?,?,?)";
+        PreparedStatement preparedStmt = cn.prepareStatement(query);
+        preparedStmt.setInt(1, Sogiuong);
+        preparedStmt.setInt(2, Sogiuong);
+        preparedStmt.setDouble(3, Dongia);
+        // execute the preparedstatement
+        preparedStmt.execute();
+    }
+    
+       public static void insertBa_Phong(int Maba, int MaPhong, String ngayvaophong) throws SQLException, ParseException {
+        Connection cn = getConnect("sa", "1");
+        SimpleDateFormat sdf1 = new SimpleDateFormat("MM/dd/yyyy");
+        java.util.Date udob = sdf1.parse(ngayvaophong);
+        java.sql.Date date = new java.sql.Date(udob.getTime());
+        String query = "insert into BA_Phong(MaBa, MaPhong, NgayVaoPhong) values(?,?,?)";
+        PreparedStatement preparedStmt = cn.prepareStatement(query);
+        preparedStmt.setInt(1, Maba);
+        preparedStmt.setInt(2, MaPhong);
+        preparedStmt.setDate(3, date);
+//        // execute the preparedstatement
+        preparedStmt.execute();
+    }
     public static void main(String[] args) throws SQLException, ParseException {
-        SimpleDateFormat sdf1 = new SimpleDateFormat("mm/dd/yyyy");
+        SimpleDateFormat sdf1 = new SimpleDateFormat("MM/dd/yyyy");
         java.util.Date udob = new Date();
         while (true) {            
             

@@ -59,7 +59,7 @@ public class AddBnGui extends javax.swing.JFrame {
 
         jLabel2.setText("Mã Bệnh Nhân: ");
 
-        jTextField1.setEnabled(false);
+        jTextField1.setEditable(false);
 
         jTextField2.setText("ABC");
 
@@ -195,14 +195,10 @@ public class AddBnGui extends javax.swing.JFrame {
 //        System.out.println("Dan Toc: "+dt);
 //        System.out.println("SCMT: "+scmt);
         try {
-                try {
-                    Connect_dbSQLBV.insert(TenBn, Namsinh,gt,diachi,sdt,dt,scmt);
-                } catch (ParseException ex) {
-                    Logger.getLogger(AddBnGui.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            JOptionPane.showMessageDialog(new JFrame(), "Thêm thành công !");
-            this.setVisible(false);
-        } catch (SQLException ex) {
+                
+            Connect_dbSQLBV.insert(TenBn, Namsinh,gt,diachi,sdt,dt,scmt);
+            JOptionPane.showMessageDialog(new JFrame(), "Thêm thành công !"); 
+        } catch (Exception ex) {
             Logger.getLogger(AddBnGui.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(new JFrame(), "Thêm không thành công, hãy kiểm tra lại dữ liệu");
         }

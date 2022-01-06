@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/AddPhongGui.java</file>
             <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/Login.java</file>
             <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/MainGui.java</file>
+            <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/AddBaGui.java</file>
             <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/AddBnGui.java</file>
-            <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/DeleteGui.java</file>
+            <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/AddBa_PhongGui.java</file>
+            <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/DeleteBnGui.java</file>
             <file>file:/F:/HQTCSDL_QLBV/src/MainPackage/Connect_dbSQLBV.java</file>
         </group>
     </open-files>

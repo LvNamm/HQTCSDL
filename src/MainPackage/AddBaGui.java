@@ -59,7 +59,7 @@ public class AddBaGui extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setEnabled(false);
+        jTextField1.setEditable(false);
 
         jLabel1.setText("Mã Ba:");
 
@@ -87,9 +87,9 @@ public class AddBaGui extends javax.swing.JFrame {
 
         jLabel7.setText("Số thẻ BHYT: ");
 
-        jTextField8.setEnabled(false);
+        jTextField8.setEditable(false);
 
-        jTextField9.setEnabled(false);
+        jTextField9.setEditable(false);
 
         jLabel8.setText("Tên Nv: ");
 
@@ -220,7 +220,7 @@ public class AddBaGui extends javax.swing.JFrame {
          int Mabn = Integer.parseInt(jTextField2.getText());
          int Manv = Integer.parseInt(jTextField4.getText());
          String ngayvaovien = jTextField5.getText();
-         float Vienphidadong = Float.parseFloat(jTextField6.getText());
+         double Vienphidadong = Double.parseDouble(jTextField6.getText());
          String sothebhyt = jTextField7.getText();
         try {
             Connect_dbSQLBV.insertBa(Mabn, Manv, ngayvaovien, Vienphidadong, sothebhyt);

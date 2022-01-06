@@ -402,7 +402,7 @@ public class MainGui extends javax.swing.JFrame {
 
         jButton4.setText("Thêm bệnh nhân vào phòng");
 
-        jButton5.setText("Xuất hóa đơn viện phí");
+        jButton5.setText("Xuất tổng viện Phí");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
